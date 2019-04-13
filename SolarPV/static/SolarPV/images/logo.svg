@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg3719"
+   version="1.1"
+   viewBox="0 0 88.9 50.8"
+   height="2in"
+   width="3.5in">
+  <defs
+     id="defs3713" />
+  <metadata
+     id="metadata3716">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-246.2)"
+     id="layer1">
+    <text
+       id="text3725"
+       y="275.83392"
+       x="13.889899"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.93333244px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.26458332"
+         y="275.83392"
+         x="13.889899"
+         id="tspan3723">Solar<tspan
+   id="tspan4532"
+   style="fill:#fd2f24;fill-opacity:1">PV</tspan></tspan></text>
+    <path
+       id="path4548"
+       d="m 51.600515,262.57656 2.639068,-1.29531 -4.233992,-5.29025 z"
+       style="fill:#fd2f24;fill-opacity:1;stroke:#fd2f24;stroke-width:0.14699081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4548-2"
+       d="m 61.363842,259.9017 h 2.939816 l -1.469908,-6.61459 z"
+       style="fill:#fd2f24;fill-opacity:1;stroke:#fd2f24;stroke-width:0.14699081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4548-2-6"
+       d="m 71.537378,261.13426 2.545955,1.46991 2.034318,-6.46336 z"
+       style="fill:#fd2f24;fill-opacity:1;stroke:#fd2f24;stroke-width:0.14699081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4548-2-7"
+       d="m 75.584688,268.43907 v 2.93982 l 6.61459,-1.46991 z"
+       style="fill:#fd2f24;fill-opacity:1;stroke:#fd2f24;stroke-width:0.14699081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4548-2-7-5"
+       d="m 64.359767,279.86186 h -2.93982 l 1.46991,6.61459 z"
+       style="fill:#fd2f24;fill-opacity:1;stroke:#fd2f24;stroke-width:0.14699081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4548-6"
+       d="m 54.035055,278.7941 -2.441305,-1.63785 -2.464495,6.31187 z"
+       style="fill:#fd2f24;fill-opacity:1;stroke:#fd2f24;stroke-width:0.14699081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4548-2-6-9"
+       d="m 73.516266,276.4004 -2.078766,2.07877 5.716606,3.63784 z"
+       style="fill:#fd2f24;fill-opacity:1;stroke:#fd2f24;stroke-width:0.14699081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+</svg>

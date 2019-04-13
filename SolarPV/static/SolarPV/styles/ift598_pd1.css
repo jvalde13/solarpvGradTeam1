@@ -1,0 +1,147 @@
+{% load static %}
+#banner {
+    width: 100%;
+}
+
+header{
+    width: 50%;
+    position: relative;
+    float: left;
+    height: 60px;
+    left: 0;
+    margin-bottom: 0;
+    bottom: 0;
+}
+
+header img {
+  height: 100px;
+}
+
+.ConButts {
+  float: right; 
+  position: relative;
+  right: 0;
+  top: 30px;
+}
+
+.ConButts a{
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: right;
+  color: black;
+}
+
+.SMButts {
+  text-decoration: none;
+  text-align: right;
+  float: right; 
+  clear: left;
+  width: 50%
+  right: 0;
+}
+
+.navbar {
+    display: block;
+    float: none;
+    clear: both;
+    overflow: hidden;
+    background-color: black;
+}
+
+.navbar a {
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropdown-button {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: black;
+  padding: 14px 16px;
+}
+
+.navbar a:hover, .dropdown:hover .dropdown-button {
+  background-color: #fd2f24;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #fd2f24;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+
+.container{
+display:block;
+font-size:1em;
+}
+.column-left{ float: left; width: 33%; 
+}
+.column-right{ float: right; width: 33%; 
+}
+.column-center{ display: inline-block; width: 33%; 
+}
+.container a {
+ font-size: .8em;
+ opacity: 0.6;
+ color: blue;
+ text-decoration:none; 
+}
+.container a:hover {
+ color:blue;
+ text-decoration:underline
+}
+
+.fixed-header, .fixed-footer{
+  width: 100%;
+  position: fixed;        
+  background: white;
+  padding: 10px 0;
+  color: black;
+}
+
+  
+.fixed-footer{
+  bottom: 0;
+} 
+
+
+
+
+
+svg {
+    z-index: 999;
+    position: absolute;
+    top: 0px;
+    left: 250px;
+}

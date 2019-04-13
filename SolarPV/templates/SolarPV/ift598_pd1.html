@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SolarPV</title>
+        <link rel="stylesheet" href="{% static 'SolarPV/styles/ift598_pd1.css' %}" type="text/css"/>
+		<link rel="stylesheet" href="k0l.css" type="text/css"/>
+        <link rel="stylesheet" href="{% static 'SolarPV/styles/ift598_pd1_SocialMedia.css'%}" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script type="text/javascript" src="geolocate.js"></script>
+    </head>
+    <body onload="getLocation()">
+        <div class="banner">
+            <header class="main-header" role="banner">
+				<img src="{% static 'SolarPV/images/logo.svg' %}" alt="Banner Image" height="100px" />
+			</header>
+			
+            <svg height="100" width="500">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                <text fill="#ffffff" font-size="12" font-family="Verdana" x="60" y="86">Since 2018!</text>
+                <text fill="#ffffff" font-size="12" font-family="Verdana" x="50" y="70">Your PV Source</text>
+                <text id="locationtext" fill="#ffffff" font-size="12" font-family="Verdana" x="50" y="55"></text>
+                Sorry, your browser does not support inline SVG.
+            </svg>
+
+            <div class="ConButts">
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="SMButts">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-pinterest"></a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="navbar">
+
+            <div class="dropdown">
+                <button class="dropdown-button">Racks & Tracks</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+
+
+            <div class="dropdown">
+                <button class="dropdown-button">PV Modules & Systems</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-button">Data Analytics</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-button">Cybersecurity</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+			<a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'JoinUS' %}">Join US</a> 
+        </div>  
+        <div class="container">
+		
+            <div class="column-center">
+                    <i>Feature contents<i>
+                    <br>
+					<div class="slideshow-container">
+				<div class="mySlides fade">	
+				<img src="{% static 'SolarPV/images/One.jpg' %}" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">	
+				<img src="{% static 'SolarPV/images/two.jpg' %}" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">	
+				<img src="{% static 'SolarPV/images/three.jpg' %}" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">	
+				<img src="{% static 'SolarPV/images/four.jpg' %}" style="width:100%">
+				</div>
+					
+				<div class="mySlides fade">	
+				<img src="{% static 'SolarPV/images/five.jpg' %}" style="width:100%">
+				</div>
+				
+			</div>
+			<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span> 
+			<span class="dot" onclick="currentSlide(2)"></span> 
+			<span class="dot" onclick="currentSlide(3)"></span> 
+			<span class="dot" onclick="currentSlide(4)"></span> 
+			
+			</div>	
+			
+			<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex].style.display = "block";  
+  dots[slideIndex].className += " active";
+  
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+            </div>	  
+ 	 	    <div class="column-left">
+			<br>
+ 	    	        <br>
+                        <ul style ="list-style-type:none" >
+                         <li>PV Module</li>
+                            <ul style ="list-style-type:square"> 
+                            <li><a href="">Testing & Certification</a></li>
+                            <li><a href="">PV Rating</a></li>
+                            </ul> 
+                            <br>
+                            <li>PV Systema Performance</li>
+                        <ul style ="list-style-type:square"> 
+                            <li><a href="">Monitoring & Inspection</a></li>
+                            <li><a href="">Performance Analysis</a></li>
+                            <li><a href="">Compare system</a></li>
+                            <li><a href="">Certification</a></li>
+                        </ul> 
+                    <br>
+                            <li>Data Analytics</li>
+                            <ul style ="list-style-type:square"> 
+                            <li><a href="">Module lifetime prediction</a></li>
+                            <li><a href="">Energy Prediction</a></li>
+                            </ul> 
+                    <br>
+                            <li>Cybersecurity and Smart Grid Technologies</li> 
+                            <ul style ="list-style-type:square"> 
+                            </ul>    
+                    <br>                            
+                            <li>Solar PV University</li>
+                            <ul style ="list-style-type:square"> 
+                            </ul>    
+                        </ul>
+        	    </div>   
+  	    	<div class="column-right">
+  		        <br>
+                <center> 
+                News & Events
+  	        	<br>
+                <br>   
+                <a href="">Photovoltaic Technical
+                Conference to take place in Marseille, France
+                from 26 to 28 April 2017</a><br>
+                <br>
+                <a href="">Trump is next US president</a><br>
+                <br>
+                <a href="">Syrian forces recapture Aleppo</a><br>
+                <br>
+                <a href="">Senate votes on SCOTUS nominee</a><br>
+                </center>   
+			    <br>
+        	    </div>
+        </div>
+		</div>
+		  <div class="fixed-footer">
+        <div class="container">
+		<p>solarPV</p>Address, Phone, Email, Website		@ 2019 All Rights Reserved
+		<p><a href="">Site Map</a> | <a href="">Terms & Conditions</a> | <a href="">Privacy Policy</a>  | <a href="">About Us</a>
+		</div>        
+    </div>
+    </body>
+</html>
