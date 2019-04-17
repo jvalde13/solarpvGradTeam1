@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='TestSquence',
+            name='TestSequence',
             fields=[
                 ('sequenceID', models.AutoField(max_length=100, primary_key=True, serialize=False)),
                 ('sequencename', models.CharField(max_length=50)),
@@ -101,7 +101,7 @@ class Migration(migrations.Migration):
                 ('maxpoweroutput', models.CharField(max_length=50)),
                 ('fillfactor', models.CharField(max_length=50)),
                 ('modelNum', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='SolarPV.Product')),
-                ('sequenceID', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='SolarPV.TestSquence')),
+                ('sequenceID', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='SolarPV.TestSequence')),
             ],
         ),
         migrations.CreateModel(

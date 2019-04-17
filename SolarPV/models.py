@@ -13,7 +13,8 @@ class User(models.Model):
     officephone = models.CharField(max_length=15)
     cellphone = models.CharField(max_length=100)
     password = models.CharField(max_length=20)
-    prefix = models.CharField(max_length=8, choices=(('Dr.', ('DR.')), ('Mr.', ('MR.')), ('Mrs.', ('MRS.'))))
+    #prefix = models.CharField(max_length=8, choices=(('Dr.', ('DR.')), ('Mr.', ('MR.')), ('Mrs.', ('MRS.'))))
+    prefix = models.CharField(max_length=8, choices=(('Dr.','Dr. description'),('Mr.', 'Mr description'),('Mrs.', 'Mrs description'),('Miss', 'Miss descripion')))
 
     def __str__(self):
           return self.firstname
@@ -75,7 +76,7 @@ class Product(models.Model):
 
 class PerformanceData(models.Model):
     modelNum = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True)
-    sequenceID = models.ForeignKey('TestSquence', on_delete=models.SET_NULL, null=True)
+    sequenceID = models.ForeignKey('TestSequence', on_delete=models.SET_NULL, null=True)
     maxsystemvoltage = models.CharField(max_length=50)   
     opencircuitvoltage = models.CharField(max_length=50)
     shortcircuitcurrent = models.CharField(max_length=50)
@@ -84,8 +85,8 @@ class PerformanceData(models.Model):
     maxpoweroutput = models.CharField(max_length=50)  
     fillfactor = models.CharField(max_length=50)  
 
-class TestSquence(models.Model):
-    sequenceID= models.AutoField(max_length=100, primary_key=True)
+class TestSequence(models.Model):
+    sequenceID = models.AutoField(max_length=100, primary_key=True)
     sequencename = models.CharField(max_length=50)
 
 class Certificate(models.Model):

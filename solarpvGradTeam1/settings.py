@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import mysql.connector
-import MySQLdb
+#import mysql.connector
+#import pymysql
 
+#pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -78,14 +79,14 @@ WSGI_APPLICATION = 'solarpvGradTeam1.wsgi.application'
 
 DATABASES = {
     'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-     #   'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.mysql',
-      #  'ENGINE': 'mysql.connector.django',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': 'SolarPV',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'rootroot',
+        #'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
