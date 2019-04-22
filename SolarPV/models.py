@@ -36,6 +36,9 @@ class Location(models.Model):
     phonenumber = models.CharField(max_length=15)
     faxnumber = models.CharField(max_length=15, blank=True)   
 
+    def __str__(self):
+          return self.clientID    
+
 class Service(models.Model):
     serviceID= models.AutoField(max_length=100, primary_key=True)
     serviceName = models.CharField(max_length=50)
@@ -43,6 +46,10 @@ class Service(models.Model):
     isFIrequired = models.CharField(max_length=50)
     FIfrequency = models.CharField(max_length=50)
     standardID= models.ForeignKey('TestStandard', on_delete=models.SET_NULL, null=True)
+
+
+    def __str__(self):
+          return self.serviceName 
 
 class TestStandard(models.Model):
     standardID = models.AutoField(max_length=100, primary_key=True)
@@ -74,9 +81,12 @@ class Product(models.Model):
     junctionboxtype = models.CharField(max_length=50)
     junctionboxmanufacturer = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.productname
+
 class PerformanceData(models.Model):
-    Product = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True)
-    TestSequence = models.ForeignKey('TestSequence', on_delete=models.SET_NULL, null=True)
+    modelNums = models.ManyToManyField('Product', null=True)
+    sequenceIDs = models.ManyToManyField('TestSequence', null=True)
     maxsystemvoltage = models.CharField(max_length=50)   
     opencircuitvoltage = models.CharField(max_length=50)
     shortcircuitcurrent = models.CharField(max_length=50)
