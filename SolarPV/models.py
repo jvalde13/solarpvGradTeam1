@@ -1,46 +1,48 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 class User(models.Model):
-    userID = models.AutoField(max_length=100, primary_key=True)
+    userID = models.CharField(max_length=100, primary_key=True)
     clientID = models.ForeignKey('Client', on_delete=models.SET_NULL, null=True)
     firstname = models.CharField(max_length=50)
     middlename = models.CharField(max_length=100, blank=True)
     lastname = models.CharField(max_length=100)
     job_title = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, blank=True)
     officephone = models.CharField(max_length=15, blank=True)
     cellphone = models.CharField(max_length=100, blank=True)
-    password = models.CharField(max_length=20)
-    #prefix = models.CharField(max_length=8, choices=(('Dr.', ('DR.')), ('Mr.', ('MR.')), ('Mrs.', ('MRS.'))))
-    prefix = models.CharField(max_length=8, choices=(('Dr.','Dr. description'),('Mr.', 'Mr description'),('Mrs.', 'Mrs description'),('Miss', 'Miss descripion')))
-
+    prefix = models.CharField(max_length=8, choices=(('Dr.','Dr.'),('Mr.', 'Mr.'),('Mrs.', 'Mrs.'),('Miss', 'Miss')))
+ 
     def __str__(self):
-          return self.firstname
+          return self.userID
 
 class Client(models.Model):
-    clientID= models.AutoField(max_length=100, primary_key=True)
+    clientID= models.CharField(max_length=100, primary_key=True)
     clientname = models.CharField(max_length=50)
     clientType = models.CharField(max_length=50)
 
+    def __str__(self):
+          return self.clientID
+
 class Location(models.Model):
-    locationID= models.AutoField(max_length=100, primary_key=True)
+    locationID= models.CharField(max_length=100, primary_key=True)
     clientID= models.ForeignKey('Client', on_delete=models.SET_NULL, null=True)
     address1 = models.TextField(max_length=200)
     address2 = models.TextField(max_length=200, blank=True)
     city = models.CharField(max_length=50)
-    state = models.CharField(max_length=50)
-    postalcode = models.IntegerField()
+    state = models.CharField(max_length=50, blank=True)
+    postalcode = models.CharField(max_length=50) 
     country = models.CharField(max_length=50)   
-    phonenumber = models.CharField(max_length=15)
+    phonenumber = models.CharField(max_length=15, blank=True)
     faxnumber = models.CharField(max_length=15, blank=True)   
 
     def __str__(self):
-          return self.clientID    
+          return self.locationID    
 
 class Service(models.Model):
-    serviceID= models.AutoField(max_length=100, primary_key=True)
+    serviceID= models.CharField(max_length=100, primary_key=True)
     serviceName = models.CharField(max_length=50)
     description = models.CharField(max_length=50, blank=True)
     isFIrequired = models.CharField(max_length=50)
@@ -49,66 +51,75 @@ class Service(models.Model):
 
 
     def __str__(self):
-          return self.serviceName 
+          return self.serviceID 
 
 class TestStandard(models.Model):
-    standardID = models.AutoField(max_length=100, primary_key=True)
-    serviceName = models.CharField(max_length=50)	
-    description = models.CharField(max_length=200)
+    standardID = models.CharField(max_length=100, primary_key=True)
+    standardName = models.TextField(max_length=150)	
+    description = models.TextField(max_length=400)
     publisheddate = models.DateField(null=True, blank=True)
 
+    def __str__(self): 
+        return self.standardID
+
 class Product(models.Model):
-    modelNum = models.AutoField(max_length=100, primary_key=True)
+    modelNum = models.CharField(max_length=100, primary_key=True)
     productname = models.CharField(max_length=50)
-    celltechnology = models.CharField(max_length=200)
-    cellmanufacture = models.DateField(null=True, blank=True)
-    numberofcells = models.IntegerField()
-    numberofcellsinseries = models.IntegerField() 
-    numberofseriesinstrings = models.IntegerField() 
-    numberofdiodes = models.IntegerField()
-    productlength = models.CharField(max_length=50)
-    productwidth = models.CharField(max_length=50)
-    productweight = models.CharField(max_length=50)
-    productweight = models.CharField(max_length=50)
-    superstratetype = models.CharField(max_length=50)
-    superstratemanufacturer = models.CharField(max_length=50)
-    substratetype = models.CharField(max_length=50)
-    substratemanufacturer = models.CharField(max_length=50)    
-    frametype = models.CharField(max_length=50)
-    frameadhesive = models.CharField(max_length=50)
-    encapsulanttype = models.CharField(max_length=50)
-    encapsulantmanufacturer = models.CharField(max_length=50)
-    junctionboxtype = models.CharField(max_length=50)
-    junctionboxmanufacturer = models.CharField(max_length=50)
+    celltechnology = models.CharField(max_length=200, blank=True)
+    cellmanufacture = models.CharField(max_length=50, null=True, blank=True)
+    numberofcells = models.CharField(max_length=50, blank=True)
+    numberofcellsinseries = models.CharField(max_length=50, blank=True)
+    numberofseriesinstrings = models.CharField(max_length=50, blank=True)
+    numberofdiodes = models.CharField(max_length=50, blank=True)
+    productlength = models.CharField(max_length=50, blank=True)
+    productwidth = models.CharField(max_length=50, blank=True)
+    productweight = models.CharField(max_length=50, blank=True)
+    superstratetype = models.CharField(max_length=50, blank=True)
+    superstratemanufacturer = models.CharField(max_length=50, blank=True)
+    substratetype = models.CharField(max_length=50, blank=True)
+    substratemanufacturer = models.CharField(max_length=50, blank=True)    
+    frametype = models.CharField(max_length=50, blank=True)
+    frameadhesive = models.CharField(max_length=50, blank=True)
+    encapsulanttype = models.CharField(max_length=50, blank=True)
+    encapsulantmanufacturer = models.CharField(max_length=50, blank=True)
+    junctionboxtype = models.CharField(max_length=50, blank=True)
+    junctionboxmanufacturer = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
-        return self.productname
-
-class PerformanceData(models.Model):
-    modelNums = models.ManyToManyField('Product', null=True)
-    sequenceIDs = models.ManyToManyField('TestSequence', null=True)
-    maxsystemvoltage = models.CharField(max_length=50)   
-    opencircuitvoltage = models.CharField(max_length=50)
-    shortcircuitcurrent = models.CharField(max_length=50)
-    voltageatmaxpower = models.CharField(max_length=50)
-    currentatmaxpower = models.CharField(max_length=50)
-    maxpoweroutput = models.CharField(max_length=50) 
-    fillfactor = models.CharField(max_length=50)
+        return self.modelNum
 
 class TestSequence(models.Model):
-    sequenceID = models.AutoField(max_length=100, primary_key=True)
-    sequencename = models.CharField(max_length=50)
+    sequenceID = models.CharField(max_length=100, primary_key=True)
+    sequencename = models.CharField(max_length=50)     
+
+    def __str__(self):
+        return self.sequenceID       
+
+class PerformanceData(models.Model):
+    modelNum = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True)
+    sequenceID = models.ForeignKey('TestSequence', on_delete=models.SET_NULL, null=True)
+    maxsystemvoltage = models.CharField(max_length=50, blank=True)   
+    opencircuitvoltage = models.CharField(max_length=50, blank=True)
+    shortcircuitcurrent = models.CharField(max_length=50, blank=True)
+    voltageatmaxpower = models.CharField(max_length=50, blank=True)
+    currentatmaxpower = models.CharField(max_length=50, blank=True)
+    maxpoweroutput = models.CharField(max_length=50, blank=True) 
+    fillfactor = models.CharField(max_length=50, blank=True)
+  
+
 
 class Certificate(models.Model):
-    certificateID = models.AutoField(max_length=100, primary_key=True)
+    certificateID = models.CharField(max_length=100, primary_key=True)
     certnumber = models.CharField(max_length=50)
     locationID= models.ForeignKey('Location', on_delete=models.SET_NULL, null=True)
     reportnumber = models.CharField(max_length=50)
     userID= models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     standardID= models.ForeignKey('TestStandard', on_delete=models.SET_NULL, null=True)
     modelNum = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True)
-    issuedate = models.DateField(null=True, blank=True)
-
+    issuedate = models.CharField(max_length=50, null=True, blank=True)
+    
+    def __str__(self):
+        return self.certificateID 
 #class Department(models.Model):
 #    name= models.CharField(max_length=50, help_text="Enter the department name.")
 #    number= models.CharField(max_length=10, primary_key= True)

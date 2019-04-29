@@ -17,10 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-
+ 
 
 urlpatterns = [
     path('admin/', admin.site.urls),	
     path('', include ('SolarPV.urls')),
+    path('api/', include('SolarPV.api.url', namespace='api')),
 ]
  
